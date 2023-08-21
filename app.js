@@ -1,7 +1,8 @@
 const express = require('express');
+const config = require('config');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || config.get('port');
 
 //Define routes
 defineRoutes = require('./routes/routes-handler');
