@@ -1,4 +1,3 @@
-console.log('whoa');
 
 function defineRoutes(app) {
     app.get('/', (req, res) => {
