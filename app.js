@@ -24,4 +24,6 @@ async function query(){
     await sql.disconnect();
 }
 
-query();
+//query();
+
+require('./helpers/logger')('hello', 'world', '!!');
