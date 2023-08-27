@@ -1,5 +1,6 @@
 const config = require('config');
 const mysql = require('mysql');
+const log = require('../../../../helpers/logger');
 
 class SqlHandler {
     type: string;
@@ -35,7 +36,7 @@ class SqlHandler {
                         reject(err);
                     }
                     else {
-                        console.log('MySql connected...');
+                        log('MySql connected...');
                         this.isConnected = true;
                         resolve(true);
                     }
@@ -52,7 +53,7 @@ class SqlHandler {
             if (this.type == 'mysql') {
                 this.connection.end();
                 this.isConnected = false;
-                console.log('MySql connection ended.')
+                log('MySql connection ended.')
                 resolve(true);
             }
             else {
